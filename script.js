@@ -72,10 +72,8 @@ const rollDiceFun = () => {
     }
 };
 
-// Logical Code
-rollDiceBtn.addEventListener('click', rollDiceFun);
-
-holdBtn.addEventListener('click', () => {
+// 2. Hold
+const holdFun = () => {
     if (playingPlayer === 0) {
         score1.textContent = parseInt(score1.textContent) + playerScore1;
         playerScore1 = 0;
@@ -87,4 +85,9 @@ holdBtn.addEventListener('click', () => {
         currentScore2.textContent = 0;
         playingPlayer = 0;
     }
-});
+};
+
+// Logical Code
+rollDiceBtn.addEventListener('click', rollDiceFun);
+
+holdBtn.addEventListener('click', holdFun);
