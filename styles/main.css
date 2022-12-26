@@ -16,6 +16,8 @@
     background-color: transparent;
     display: flex;
     position: relative;
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 10px;
 }
 
 .parent .container .first-player,
@@ -61,6 +63,7 @@
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px #000;
 }
 
 .parent .container .first-player .header .score-1,
@@ -93,6 +96,7 @@
     height: 100px;
     margin-top: 30px;
     margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #eee;
 }
 
 .parent .container .settings .header .new-game,
@@ -128,6 +132,37 @@
     margin-left: 8px;
 }
 
-.is-win-1, .is-win-2{
+.is-win-1,
+.is-win-2 {
     font-size: 12px;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Apply the animation to the span element */
+.is-win-1,
+.is-win-2 {
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+/* Style the span element */
+.is-win-1,
+.is-win-2 {
+    display: inline-block;
+    /* font-size: 36px; */
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
 }

@@ -13,9 +13,9 @@ body {
 
 /* Variables */
 :root {
-    --firstColor: #09e5f5a8;
-    --secondColor: #69afffbe;
-    --thirdColor: #0c7cbdc2;
-    --playerColor: rgb(10, 104, 104);
-    --activePlayerColor: rgb(8, 133, 133);
+    --firstColor: rgb(32, 187, 187);
+    --secondColor: rgb(97, 226, 226);
+    --thirdColor: rgb(208, 238, 238);
+    --activePlayerColor: rgb(10, 104, 104);
+    --playerColor: rgb(8, 133, 133);
 }

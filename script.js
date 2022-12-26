@@ -38,9 +38,16 @@ let results2 = [];
 // 1. Roll Dice
 const rollDiceFun = () => {
     value = Math.trunc(Math.random() * 6 + 1);
-    console.log('Value: ' + value);
+    // console.log('Value: ' + value);
     // diceResult1.textContent = '{' + results1 + '}';
     // diceResult2.textContent = '{' + results2 + '}';
+    if (playingPlayer === 0) {
+        firstPlayer.style.backgroundColor = 'rgb(10, 104, 104)';
+        secondPlayer.style.backgroundColor = 'rgb(8, 133, 133)';
+    } else {
+        secondPlayer.style.backgroundColor = 'rgb(10, 104, 104)';
+        firstPlayer.style.backgroundColor = 'rgb(8, 133, 133)';
+    }
 
     winnerPlayer = winner(parseInt(score1.textContent), parseInt(score2.textContent));
     if (winnerPlayer === 0) {
@@ -71,7 +78,7 @@ const rollDiceFun = () => {
         }
         // console.log(playingPlayer);
         playingPlayer = (playingPlayer === 0) ? 1 : 0;
-        console.log('Player Playing: ' + playingPlayer);
+        // console.log('Player Playing: ' + playingPlayer);
     } else {
         if (playingPlayer === 0) {
             currentScore1.textContent = value;
