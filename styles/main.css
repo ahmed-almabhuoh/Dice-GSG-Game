@@ -127,3 +127,7 @@
 .parent .container .settings .body .hold p {
     margin-left: 8px;
 }
+
+.is-win-1, .is-win-2{
+    font-size: 12px;
+}
