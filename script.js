@@ -41,7 +41,11 @@ const rollDiceFun = () => {
     // diceResult1.textContent = '{' + results1 + '}';
     // diceResult2.textContent = '{' + results2 + '}';
 
+    img = `images/${value}.jpeg`;
+    diceImage.src = img;
+
     if (value === 1) {
+
         if (playingPlayer === 0) {
             results1.push(value);
             score1.textContent = parseInt(score1.textContent) + playerScore1;
@@ -57,9 +61,6 @@ const rollDiceFun = () => {
         playingPlayer = (playingPlayer === 0) ? 1 : 0;
         console.log('Player Playing: ' + playingPlayer);
     } else {
-        img = `images/${value}.jpeg`;
-        diceImage.src = img;
-
         if (playingPlayer === 0) {
             currentScore1.textContent = value;
             results1.push(value);
@@ -87,7 +88,26 @@ const holdFun = () => {
     }
 };
 
+// 3. Initialization
+const init = () => {
+    playingPlayer = 0;
+    value;
+    img = `images/1.jpeg`;
+    playerScore1 = 0;
+    playerScore2 = 0;
+    results1 = [];
+    results2 = [];
+
+    score1.textContent = scores[0];
+    score2.textContent = scores[1];
+
+    currentScore1.textContent = playerScore1;
+    currentScore2.textContent = playerScore2;
+};
+
 // Logical Code
 rollDiceBtn.addEventListener('click', rollDiceFun);
 
 holdBtn.addEventListener('click', holdFun);
+
+newGameBtn.addEventListener('click', init);
