@@ -30,6 +30,7 @@ let value;
 let img = `images/1.jpeg`;
 let playerScore1 = 0;
 let playerScore2 = 0;
+let winnerPlayer = 5;
 let results1 = [];
 let results2 = [];
 
@@ -40,6 +41,17 @@ const rollDiceFun = () => {
     console.log('Value: ' + value);
     // diceResult1.textContent = '{' + results1 + '}';
     // diceResult2.textContent = '{' + results2 + '}';
+
+    winnerPlayer = winner(parseInt(score1.textContent), parseInt(score2.textContent));
+    if (winnerPlayer === 0) {
+        document.querySelector('.is-win-1').textContent = 'Winner Winner Checken Dinner';
+        document.querySelector('.is-win-2').textContent = '';
+        init();
+    } else if (winnerPlayer === 1) {
+        document.querySelector('.is-win-2').textContent = 'Winner Winner Checken Dinner';
+        document.querySelector('.is-win-1').textContent = '';
+        init();
+    }
 
     img = `images/${value}.jpeg`;
     diceImage.src = img;
@@ -86,6 +98,16 @@ const holdFun = () => {
         currentScore2.textContent = 0;
         playingPlayer = 0;
     }
+    winnerPlayer = winner(parseInt(score1.textContent), parseInt(score2.textContent));
+    if (winnerPlayer === 0) {
+        document.querySelector('.is-win-1').textContent = 'Winner Winner Checken Dinner';
+        document.querySelector('.is-win-2').textContent = '';
+        init();
+    } else if (winnerPlayer === 1) {
+        document.querySelector('.is-win-2').textContent = 'Winner Winner Checken Dinner';
+        document.querySelector('.is-win-1').textContent = '';
+        init();
+    }
 };
 
 // 3. Initialization
@@ -95,6 +117,7 @@ const init = () => {
     img = `images/1.jpeg`;
     playerScore1 = 0;
     playerScore2 = 0;
+    winnerPlayer = 5;
     results1 = [];
     results2 = [];
 
@@ -103,6 +126,21 @@ const init = () => {
 
     currentScore1.textContent = playerScore1;
     currentScore2.textContent = playerScore2;
+};
+
+// 4. Check Who Win
+const winner = (score1, score2) => {
+    if (score1 >= score2) {
+        if (score1 >= 30) {
+            return 0;
+        }
+    } else if (score1 <= score2) {
+        if (score2 >= 30) {
+            return 1;
+        }
+    } else {
+        return 5;
+    }
 };
 
 // Logical Code
