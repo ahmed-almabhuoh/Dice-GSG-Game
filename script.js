@@ -33,12 +33,13 @@ let playerScore2 = 0;
 let results1 = [];
 let results2 = [];
 
-// Logical Code
-rollDiceBtn.addEventListener('click', () => {
+// Functions
+// 1. Roll Dice
+const rollDiceFun = () => {
     value = Math.trunc(Math.random() * 6 + 1);
     console.log('Value: ' + value);
-    diceResult1.textContent = '{' + results1 + '}';
-    diceResult2.textContent = '{' + results2 + '}';
+    // diceResult1.textContent = '{' + results1 + '}';
+    // diceResult2.textContent = '{' + results2 + '}';
 
     if (value === 1) {
         if (playingPlayer === 0) {
@@ -68,5 +69,22 @@ rollDiceBtn.addEventListener('click', () => {
             results2.push(value);
             playerScore2 += value;
         }
+    }
+};
+
+// Logical Code
+rollDiceBtn.addEventListener('click', rollDiceFun);
+
+holdBtn.addEventListener('click', () => {
+    if (playingPlayer === 0) {
+        score1.textContent = parseInt(score1.textContent) + playerScore1;
+        playerScore1 = 0;
+        currentScore1.textContent = 0;
+        playingPlayer = 1;
+    } else {
+        score2.textContent = parseInt(score2.textContent) + playerScore2;
+        playerScore2 = 0;
+        currentScore2.textContent = 0;
+        playingPlayer = 0;
     }
 });
