@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSG - Dice Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/fontawesome-free-6.2.1-web/css/all.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="container">
+
+            <!-- First Player -->
+            <div class="first-player">
+                <!-- Header -->
+                <div class="header">
+                    <div class="result-1"></div>
+                    <h1 class="name">player 1</h1>
+                    <p class="score-1">0</p>
+                </div>
+                <!-- Body -->
+                <div class="body">
+                    <p class="title">current</p>
+                    <p class="current-score-1">0</p>
+                </div>
+            </div>
+
+            <div class="settings">
+                <div class="header">
+                    <div class="new-game">
+                        <i class="fa-solid fa-recycle"></i>
+                        <p class="new-game-btn">new game</p>
+                    </div>
+                    <img src="images/1.jpeg" alt="Dice Image" class="dice-image">
+                </div>
+                <div class="body">
+                    <div class="roll-dice">
+                        <i class="fa-solid fa-dice"></i>
+                        <p class="roll-dice-btn">roll dice</p>
+                    </div>
+                    <div class="hold">
+                        <i class="fa-solid fa-stop"></i>
+                        <p class="hold-btn">hold</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Player -->
+            <div class="second-player">
+                <!-- Header -->
+                <div class="header">
+                    <div class="result-2"></div>
+                    <h1 class="name">player 2</h1>
+                    <p class="score-2">0</p>
+                </div>
+                <!-- Body -->
+                <div class="body">
+                    <p class="title">current</p>
+                    <p class="current-score-2">0</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+/* Reset Elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Variables */
+:root {
+    --firstColor: #09e5f5a8;
+    --secondColor: #69afffbe;
+    --thirdColor: #0c7cbdc2;
+    --playerColor: rgb(10, 104, 104);
+    --activePlayerColor: rgb(8, 133, 133);
+}
